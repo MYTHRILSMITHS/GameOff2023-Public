@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<Root>
+	<Entry>
+		<zType comment ="Unique ID for this level"/>
+		<Name comment="string, Title. keep it short and sweet"/>	
+		<Description comment="String; In game rule explaination; keep to one sentence"/>
+			
+		<iWaveSize comment="Number of enemies to generate"/>
+		<iWaveNum comment="Number of waves"/>
+		
+		<Enemy>
+		<EnemyModifier comment="reserved; physics manipulation hook"/>
+		<EnemyMovementMode comment="how the enemy moves; must be a predefined mode"/>
+		<iHP comment="HP (in points) of each enemy"/>
+		<iTimer comment="number of seconds the player has to complete this level before the soul is lost forever"/>	
+		<NextLevel comment="the level that gets auto loaded upon completion of this one, if any, before a Soul is saved"/>
+		
+	</Entry>
+	
+	<Entry>
+		<zType>TARGET_PRACTICE_20</zType>
+		<Name>20 Targets</Name>
+		<Description>Warm up -- hit 20 targets!</Description>
+		
+		<iWaveSize>10<iWaveSize>
+		<iWaveNum>2</iWaveNum>
+		<Enemy>Target</Enemy>
+		<EnemyMovementMode>BOUNCE</EnemyMovementMode>
+		<iHP>1</iHP>
+		<iTimer>180</iTimer>
+		<NextLevel/>
+	</Entry>
+	
+	<Entry>
+		<zType>TARGET_PRACTICE_30</zType>
+		<Name>30 Targets</Name>
+		<Description>Challenge -- Destroy 10 tough targets, then 20 more weak ones</Description>
+		
+		<iWaveSize>5<iWaveSize>
+		<iWaveNum>2</iWaveNum>
+		<Enemy>Target</Enemy>
+		<EnemyMovementMode>CIRCLE</EnemyMovementMode>
+		<iHP>1000</iHP>
+		<iTimer>500</iTimer>
+		<NextLevel>TARGET_PRACTICE_20</NextLevel>
+	</Entry>
+</Root>
